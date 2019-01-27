@@ -12,7 +12,8 @@
 		4448A6E421FC064A00D95DC0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4448A6E221FC064A00D95DC0 /* Main.storyboard */; };
 		4448A6E621FC064C00D95DC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4448A6E521FC064C00D95DC0 /* Assets.xcassets */; };
 		4448A6E921FC064C00D95DC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4448A6E721FC064C00D95DC0 /* LaunchScreen.storyboard */; };
-		4448A6F121FC08CE00D95DC0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4448A6F021FC08CE00D95DC0 /* awsconfiguration.json */; };
+		4448A6F521FE539B00D95DC0 /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 4448A6F421FE539A00D95DC0 /* awsconfiguration.json */; };
+		4448A6FB21FE541000D95DC0 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4448A6FA21FE541000D95DC0 /* Note.swift */; };
 		ECC26B5DEEF7585737ABA0BB /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 226FBC96370F52DEFA04BF76 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +26,8 @@
 		4448A6E521FC064C00D95DC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4448A6E821FC064C00D95DC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4448A6EA21FC064C00D95DC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4448A6F021FC08CE00D95DC0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		4448A6F421FE539A00D95DC0 /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
+		4448A6FA21FE541000D95DC0 /* Note.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		7903AD5656358E40B01C719E /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		ED2FCA844F44336F218C1202 /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,15 +74,33 @@
 		4448A6DD21FC064A00D95DC0 /* Notes */ = {
 			isa = PBXGroup;
 			children = (
+				4448A6F821FE541000D95DC0 /* Models */,
+				4448A6F421FE539A00D95DC0 /* awsconfiguration.json */,
 				4448A6DE21FC064A00D95DC0 /* AppDelegate.swift */,
 				4448A6E021FC064A00D95DC0 /* ViewController.swift */,
 				4448A6E221FC064A00D95DC0 /* Main.storyboard */,
-				4448A6F021FC08CE00D95DC0 /* awsconfiguration.json */,
 				4448A6E521FC064C00D95DC0 /* Assets.xcassets */,
 				4448A6E721FC064C00D95DC0 /* LaunchScreen.storyboard */,
 				4448A6EA21FC064C00D95DC0 /* Info.plist */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		4448A6F821FE541000D95DC0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4448A6F921FE541000D95DC0 /* NoSQL */,
+			);
+			name = Models;
+			path = "Notes-integration-lib-aws-my-sample-app-ios-swift/AmazonAws/Models";
+			sourceTree = "<group>";
+		};
+		4448A6F921FE541000D95DC0 /* NoSQL */ = {
+			isa = PBXGroup;
+			children = (
+				4448A6FA21FE541000D95DC0 /* Note.swift */,
+			);
+			path = NoSQL;
 			sourceTree = "<group>";
 		};
 		99033AA3C89A853E98058F49 /* Frameworks */ = {
@@ -151,7 +171,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4448A6F121FC08CE00D95DC0 /* awsconfiguration.json in Resources */,
+				4448A6F521FE539B00D95DC0 /* awsconfiguration.json in Resources */,
 				4448A6E921FC064C00D95DC0 /* LaunchScreen.storyboard in Resources */,
 				4448A6E621FC064C00D95DC0 /* Assets.xcassets in Resources */,
 				4448A6E421FC064A00D95DC0 /* Main.storyboard in Resources */,
@@ -197,6 +217,7 @@
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProvider/AWSCognitoIdentityProvider.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCognitoIdentityProviderASF/AWSCognitoIdentityProviderASF.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSCore/AWSCore.framework",
+				"${BUILT_PRODUCTS_DIR}/AWSDynamoDB/AWSDynamoDB.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSMobileClient/AWSMobileClient.framework",
 				"${BUILT_PRODUCTS_DIR}/AWSUserPoolsSignIn/AWSUserPoolsSignIn.framework",
 			);
@@ -209,6 +230,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProvider.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCognitoIdentityProviderASF.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSDynamoDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSMobileClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AWSUserPoolsSignIn.framework",
 			);
@@ -226,6 +248,7 @@
 			files = (
 				4448A6E121FC064A00D95DC0 /* ViewController.swift in Sources */,
 				4448A6DF21FC064A00D95DC0 /* AppDelegate.swift in Sources */,
+				4448A6FB21FE541000D95DC0 /* Note.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

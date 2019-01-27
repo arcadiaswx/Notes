@@ -9,5 +9,7 @@ target 'Notes' do
 pod 'AWSMobileClient'
 pod 'AWSUserPoolsSignIn'
 pod 'AWSAuthUI'
+# pod 'AWSFacebookSignIn'
+pod 'AWSDynamoDB'
 
 end
