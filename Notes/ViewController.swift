@@ -87,5 +87,48 @@ class ViewController: UIViewController {
       }
     }
   }
+  func updateNote(noteID : String, content : String) {
+    let dbObjMapper = AWSDynamoDBObjectMapper.default()
+    if let hashKey = AWSIdentityManager.default().identityId {
+      dbObjMapper.load(Note.self, hashKey: hashKey, rangeKey: noteID) { (model, error) in
+        if let note = model as? Note {
+          note._content = content
+          self.saveNote(note: note)
+        }
+      }
+    }
+  }
+  
+  func deleteNote(noteID : String) {
+    if let note = Note() {
+      note._userId = AWSIdentityManager.default().identityId
+      note._noteId = noteID
+      let dbObjMapper = AWSDynamoDBObjectMapper.default()
+      dbObjMapper.remove(note) { (error) in
+        print (error?.localizedDescription ?? "no error")
+      }
+    }
+  }
+  
+  func queryNotes() {
+    let qExp = AWSDynamoDBQueryExpression()
+    
+    qExp.keyConditionExpression = "#uId = :userId and #noteId > :someId"
+    
+    qExp.expressionAttributeNames = ["#uId":"userId", "#noteId":"noteId"]
+    qExp.expressionAttributeValues = [":userId":AWSIdentityManager.default().identityId!, ":someId":"100"]
+    
+    let objMapper = AWSDynamoDBObjectMapper.default()
+    objMapper.query(Note.self, expression: qExp) { (output, error) in
+      if let notes = output?.items as? [Note] {
+        notes.forEach({ (note) in
+          print (note._content ?? "no content")
+          print (note._noteId ?? "no id")
+        })
+      }
+    }
+  }
+  
 }
+
 
