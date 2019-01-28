@@ -13,6 +13,7 @@
 
 import Foundation
 import UIKit
+import AWSCore
 import AWSDynamoDB
 
 class Note: AWSDynamoDBObjectModel, AWSDynamoDBModeling {

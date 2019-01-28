@@ -20,6 +20,7 @@ PODS:
 
 DEPENDENCIES:
   - AWSAuthUI
+  - AWSCore (~> 2.8.0)
   - AWSDynamoDB
   - AWSMobileClient
   - AWSUserPoolsSignIn
@@ -45,6 +46,6 @@ SPEC CHECKSUMS:
   AWSMobileClient: 59072ca49e82706c6d958f7a08e4a285d7197af1
   AWSUserPoolsSignIn: 1eb61512db85bf0d043f79eda77de0ee09035bcf
 
-PODFILE CHECKSUM: 02882847f38da0d1f8a1e25d39e480e80285cf58
+PODFILE CHECKSUM: caffabcd6bc8fdc76bc32e6dd532aaf78f29117d
 
 COCOAPODS: 1.5.3
